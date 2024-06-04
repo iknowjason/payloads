@@ -1,0 +1,155 @@
+{
+  "id": "33333333",
+  "name": "Alice 2.0 Operation 14",
+  "adversary": {
+    "adversary_id": "50855e29-3b4e-4562-aa55-b3d7f93c26b8",
+    "name": "Alice 2.0",
+    "description": "Adversary used for demoing restricted lateral movement",
+    "atomic_ordering": [
+      "13379ae1-d20e-4162-91f8-320d78a35e7f",
+      "7049e3ec-b822-4fdf-a4ac-18190f9b66d1",
+      "14a21534-350f-4d83-9dd7-3c56b93a0c17",
+      "6d90e6fa-9324-4eb5-93be-9f737245bd7z",
+      "2afae782-6d0a-4fbd-a6b6-d1ce90090eac",
+      "921055f4-5970-4707-909e-62f594234d91",
+      "aa6ec4dd-db09-4925-b9b9-43adeb154686",
+      "65048ec1-f7ca-49d3-9410-10813e472b30",
+      "ece5dde3-d370-4c20-b213-a1f424aa8d03"
+    ],
+    "objective": "495a9828-cab1-44dd-a0ca-66e58177d8cc",
+    "tags": [],
+    "plugin": "stockpile"
+  },
+  "jitter": "2/8",
+  "planner": {
+    "id": "aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a",
+    "name": "atomic",
+    "module": "app.planners.atomic",
+    "params": {},
+    "description": "string",
+    "stopping_conditions": [],
+    "ignore_enforcement_modules": [
+      "string"
+    ],
+    "allow_repeatable_abilities": true,
+    "plugin": null
+  },
+  "state": "running",
+  "obfuscator": "plain-text",
+  "autonomous": 1,
+  "auto_close": false,
+  "visibility": 51,
+  "objective": {
+    "id": "string",
+    "name": "string",
+    "description": "string",
+    "goals": [
+      {
+        "target": "string",
+        "value": "string",
+        "count": 0,
+        "operator": "string"
+      }
+    ]
+  },
+  "use_learning_parsers": true,
+  "group": "",
+  "source": {
+    "id": "ed32b9c3-9593-4c33-b0db-e2007315096b",
+    "name": "basic",
+    "facts": [
+      {
+        "trait": "string",
+        "value": "string",
+        "score": 0,
+        "source": "string",
+        "origin_type": "string",
+        "links": [
+          "string"
+        ],
+        "relationships": [
+          "string"
+        ],
+        "limit_count": 0,
+        "collected_by": [
+          "string"
+        ],
+        "technique_id": "string"
+      }
+    ],
+    "rules": [
+      {
+        "action": "DENY",
+        "trait": "file.sensitive.extension",
+        "match": ".*"
+      },
+      {
+        "action": "ALLOW",
+        "trait": "file.sensitive.extension",
+        "match": "png"
+      },
+      {
+        "action": "ALLOW",
+        "trait": "file.sensitive.extension",
+        "match": "yml"
+      },
+      {
+        "action": "ALLOW",
+        "trait": "file.sensitive.extension",
+        "match": "wav"
+      }
+    ],
+    "adjustments": [
+      {
+        "ability_id": "string",
+        "trait": "string",
+        "value": "string",
+        "offset": 0
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "trait": "string",
+          "value": "string",
+          "score": 0,
+          "source": "string",
+          "origin_type": "string",
+          "links": [
+            "string"
+          ],
+          "relationships": [
+            "string"
+          ],
+          "limit_count": 0,
+          "collected_by": [
+            "string"
+          ],
+          "technique_id": "string"
+        },
+        "edge": "string",
+        "target": {
+          "trait": "string",
+          "value": "string",
+          "score": 0,
+          "source": "string",
+          "origin_type": "string",
+          "links": [
+            "string"
+          ],
+          "relationships": [
+            "string"
+          ],
+          "limit_count": 0,
+          "collected_by": [
+            "string"
+          ],
+          "technique_id": "string"
+        },
+        "score": 0,
+        "origin": "string"
+      }
+    ],
+    "plugin": null
+  }
+}

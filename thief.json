@@ -1,0 +1,151 @@
+{
+  "id": "22222222",
+  "name": "Thief Operation 14",
+  "adversary": {
+    "adversary_id": "1a98b8e6-18ce-4617-8cc5-e65a1a9d490e",
+    "name": "Thief",
+    "description": "An adversary to steal sensitive files",
+    "atomic_ordering": [
+      "6469befa-748a-4b9c-a96d-f191fde47d89",
+      "90c2efaa-8205-480d-8bb6-61d90dbaf81b",
+      "4e97e699-93d7-4040-b5a3-2e906a58199e",
+      "300157e5-f4ad-4569-b533-9d1fa0e74d74",
+      "ea713bc4-63f0-491c-9a6f-0b01d560b87e"
+    ],
+    "objective": "495a9828-cab1-44dd-a0ca-66e58177d8cc",
+    "tags": [],
+    "plugin": "stockpile"
+  },
+  "jitter": "2/8",
+  "planner": {
+    "id": "aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a",
+    "name": "atomic",
+    "module": "app.planners.atomic",
+    "params": {},
+    "description": "string",
+    "stopping_conditions": [],
+    "ignore_enforcement_modules": [
+      "string"
+    ],
+    "allow_repeatable_abilities": true,
+    "plugin": null
+  },
+  "state": "running",
+  "obfuscator": "plain-text",
+  "autonomous": 1,
+  "auto_close": false,
+  "visibility": 51,
+  "objective": {
+    "id": "string",
+    "name": "string",
+    "description": "string",
+    "goals": [
+      {
+        "target": "string",
+        "value": "string",
+        "count": 0,
+        "operator": "string"
+      }
+    ]
+  },
+  "use_learning_parsers": true,
+  "group": "",
+  "source": {
+    "id": "ed32b9c3-9593-4c33-b0db-e2007315096b",
+    "name": "basic",
+    "facts": [
+      {
+        "trait": "string",
+        "value": "string",
+        "score": 0,
+        "source": "string",
+        "origin_type": "string",
+        "links": [
+          "string"
+        ],
+        "relationships": [
+          "string"
+        ],
+        "limit_count": 0,
+        "collected_by": [
+          "string"
+        ],
+        "technique_id": "string"
+      }
+    ],
+    "rules": [
+      {
+        "action": "DENY",
+        "trait": "file.sensitive.extension",
+        "match": ".*"
+      },
+      {
+        "action": "ALLOW",
+        "trait": "file.sensitive.extension",
+        "match": "png"
+      },
+      {
+        "action": "ALLOW",
+        "trait": "file.sensitive.extension",
+        "match": "yml"
+      },
+      {
+        "action": "ALLOW",
+        "trait": "file.sensitive.extension",
+        "match": "wav"
+      }
+    ],
+    "adjustments": [
+      {
+        "ability_id": "string",
+        "trait": "string",
+        "value": "string",
+        "offset": 0
+      }
+    ],
+    "relationships": [
+      {
+        "source": {
+          "trait": "string",
+          "value": "string",
+          "score": 0,
+          "source": "string",
+          "origin_type": "string",
+          "links": [
+            "string"
+          ],
+          "relationships": [
+            "string"
+          ],
+          "limit_count": 0,
+          "collected_by": [
+            "string"
+          ],
+          "technique_id": "string"
+        },
+        "edge": "string",
+        "target": {
+          "trait": "string",
+          "value": "string",
+          "score": 0,
+          "source": "string",
+          "origin_type": "string",
+          "links": [
+            "string"
+          ],
+          "relationships": [
+            "string"
+          ],
+          "limit_count": 0,
+          "collected_by": [
+            "string"
+          ],
+          "technique_id": "string"
+        },
+        "score": 0,
+        "origin": "string"
+      }
+    ],
+    "plugin": null
+  }
+}
