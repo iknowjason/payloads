@@ -1,0 +1,66 @@
+name: Deploy Operations to Caldera via Tines
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  orchestrate-and-send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+     
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run:
+          pip install pyyaml requests
+
+      - name: Parse and send operations
+        run: |
+          import json
+          import yaml
+          import time
+          import requests
+
+          # Load orchestrator settings
+          with open('orchestrator.yml', 'r') as file:
+            orchestrator = yaml.safe_load(file)
+
+          # Fetch data from Github secrets and orchestrator file
+          group = orchestrator['group']
+          caldera_server = orchestrator['caldera_server']
+          caldera_api_key = '${{ secrets.CALDERA_API_KEY }}'
+          operations = []
+          
+          for op in orchestrator['operations']:
+              with open(f'operations/{op["file"]}', 'r') as json_file: 
+                  operation_data = json.load(json_file)
+              
+              operations.append({
+                  "name": op['name'],
+                  "data": operation_data
+              })
+
+          # Prepare the webhook payload
+          webhook_payload = {
+              "group": group,
+              "caldera_server": caldera_server,
+              "caldera_api_key": caldera_api_key,
+              "operations": operations
+          }
+              
+          # Send data to Tines webhook
+          webhook_url = '${{ secrets.TINES_WEBHOOK_URL }}'
+          response = requests.post(webhook_url, json=webhook_payload)
+          print(response.text)
+        shell: python
